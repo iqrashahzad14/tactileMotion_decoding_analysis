@@ -1,0 +1,72 @@
+{
+  "Name": "mainExperiment1",
+  "Description": "contrasts for the motion localizer dataset",
+  "Input": {
+    "task": "mainExperiment1"
+  },
+  "Steps": [
+    {
+      "Level": "run",
+      "Model": {
+        "X": [
+          "trial_type.visualvertical",
+          "trial_type.visualhorizontal",
+          "trial_type.tactilevertical",
+          "trial_type.tactilehorizontal",
+          "trans_x", "trans_y", "trans_z", "rot_x", "rot_y", "rot_z"
+        ]
+      },
+      "AutoContrasts": [
+        "trial_type.visualvertical",
+        "trial_type.visualhorizontal",
+        "trial_type.tactilevertical",
+        "trial_type.tactilehorizontal"]
+    },
+    {
+      "Level": "subject",
+      "AutoContrasts": [
+        "trial_type.visualvertical",
+        "trial_type.visualhorizontal" ,
+        "trial_type.tactilevertical",
+        "trial_type.tactilehorizontal"],
+      "Contrasts": [
+        {
+          "Name": "visual_ver_gt_hor",
+          "ConditionList": [
+            "trial_type.visualvertical", "trial_type.visualhorizontal"
+          ],
+          "weights": [1, -1],
+          "type": "t"
+        },
+        {
+          "Name": "visual_hor_gt_vert",
+          "ConditionList": [
+            "trial_type.visualvertical", "trial_type.visualhorizontal"
+          ],
+          "weights": [-1, 1],
+          "type": "t"
+        },
+        {
+          "Name": "tactile_ver_gt_hor",
+          "ConditionList": [
+            "trial_type.tactilevertical", "trial_type.tactilehorizontal"
+          ],
+          "weights": [1, -1],
+          "type": "t"
+        },
+        {
+          "Name": "tactile_hor_gt_vert",
+          "ConditionList": [
+            "trial_type.tactilevertical", "trial_type.tactilehorizontal"
+          ],
+          "weights": [-1, 1],
+          "type": "t"
+        }
+      ]
+    },
+    {
+      "Level": "dataset",
+      "AutoContrasts": ["trial_type.visualvertical", "trial_type.visualhorizontal", "trial_type.tactilevertical", "trial_type.tactilehorizontal", "visual_ver_gt_hor", "visual_hor_gt_vert", "tactile_ver_gt_hor", "tactile_hor_gt_vert"]
+    }
+  ]
+}
