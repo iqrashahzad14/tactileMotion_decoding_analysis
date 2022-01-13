@@ -1,0 +1,6 @@
+[submodule "lib/check_my_code"]
+	path = lib/check_my_code
+	url = https://github.com/Remi-Gau/check_my_code.git
+[submodule "CPP_SPM"]
+	path = lib/CPP_SPM
+	url = https://github.com/cpp-lln-lab/CPP_SPM.git
