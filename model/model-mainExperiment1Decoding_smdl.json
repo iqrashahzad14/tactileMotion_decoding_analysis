@@ -1,0 +1,26 @@
+{
+  "Name": "mainExperiment1",
+  "Description": "contrasts for the rhythm block dataset",
+  "Input": {
+    "task": "mainExperiment1"
+  },
+  "Steps": [
+    {
+      "Level": "run",
+      "Model": {
+        "X": [
+          "trial_type.visualvertical",
+          "trial_type.visualhorizontal",
+          "trial_type.tactilevertical",
+          "trial_type.tactilehorizontal",
+          "trans_x", "trans_y", "trans_z", "rot_x", "rot_y", "rot_z"
+        ]
+      },
+      "AutoContrasts": [
+        "trial_type.visualvertical",
+        "trial_type.visualhorizontal",
+        "trial_type.tactilevertical",
+        "trial_type.tactilehorizontal"]
+    }
+  ]
+}
