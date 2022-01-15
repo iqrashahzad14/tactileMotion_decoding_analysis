@@ -34,24 +34,9 @@ for i=1:length(output.onset)
     end
 end
 
-% FOR MAIN EXPT, if wee dont chage the onset of the first stimulus of a
-% block, we have random and variable IBI in the experiment which is okay ac
-% to the design
-% IBI =[5.78,5.3419,6.8,6.5483,5.4044,5.4333,5.7721,0];
-% IBI=IBI'; 
-% ind=0;
-% indLastEvent=find(output.event==20);%if the last event is 12th
-% for j=3:length(output.onset)
-%         if strcmp(output.modality_type(i),'tactile')==1
-%         if output.event(j)==1 %if a new stim of a block
-%             ind=ind+1;
-%             output.onset(j)=output.onset(j)+1 + IBI(ind);   
-%         end
-%         if output.event(j)==2 %if 2nd stim of a block
-%             output.onset(j)=output.onset(j)-0.5; %subtract 1 for tactileLocalizer1, 0.5 for tactileLocalizer2, and also 3, 4, 5---- these the are ISI
-%         end
-%         end
-% end
+% new IBI = IBI + 0.5 for tactile stimulation, so make an account of the
+% new IBIs
+% IBI =[5.78,5.3419,6.8,6.5483,5.4044,5.4333,5.7721,0]';
 
 for k=1:length(output.onset)
     output.trial_type(k)=strcat(output.modality_type(k), '_', output.trial_type(k));
