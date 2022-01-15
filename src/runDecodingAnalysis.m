@@ -44,11 +44,10 @@ bidsSmoothing(funcFWHM, opt);
 % subject level univariate
 bidsFFX('specifyAndEstimate', opt, funcFWHM);
 bidsFFX('contrasts', opt, funcFWHM);
-%
-%
+
 % %visualise the results
 bidsResults(opt, funcFWHM);
-%
+
 % % % % group level univariate
 % conFWHM = 8;
 % bidsRFX('smoothContrasts', opt,funcFWHM, conFWHM);
@@ -58,30 +57,25 @@ bidsResults(opt, funcFWHM);
 % % % bidsResults(opt, FWHM);
 % %
 
-% prep for decoding analysis
+% prep for mvpa
 funcFWHM = 0;
 bidsSmoothing(funcFWHM, opt);
-%
-%
-% subject level univariate
+
 bidsFFX('specifyAndEstimate', opt, funcFWHM);
 bidsFFX('contrasts', opt, funcFWHM);
-% %visualise the results
+
 bidsResults(opt, funcFWHM);
 % % prep for mvpa
-funcFWHM = 2;
+
 bidsConcatBetaTmaps(opt, funcFWHM, 0, 0);
 
 
 funcFWHM = 2;
 bidsSmoothing(funcFWHM, opt);
-%
-%
-% subject level univariate
+
 bidsFFX('specifyAndEstimate', opt, funcFWHM);
 bidsFFX('contrasts', opt, funcFWHM);
-% %visualise the results
+
 bidsResults(opt, funcFWHM);
-% % prep for mvpa
-funcFWHM = 2;
+
 bidsConcatBetaTmaps(opt, funcFWHM, 0, 0);
